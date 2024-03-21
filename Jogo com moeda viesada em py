@@ -1,9 +1,11 @@
 ## Esse programa simula um jogo em que o usuário escolhe entre os valores 0 e 1 (cara e coroa), e o computador sorteia valores aleatórios. 
+# Ele segue a mesma lógica que os jogos de azar da internet de hje em dia! Ouseja, o usuário vai perder sempre que o algoritmo quiser😉
+
 #O objetivo é prever o valor sorteado. O programa solicita ao usuário a quantidade de jogadas desejadas e, em seguida, pede que o usuário faça suas escolhas para cada jogada.
 # O programa então repete o processo de sorteio e comparação das escolhas do usuário com os valores sorteados. 
 #Ele continua esse processo até que o percentual de acertos do usuário seja menor ou igual a 30%. A probabilidade de acerto é calculada como o número de acertos (c) dividido pelo número total de jogadas (n).
 # Ao final, o programa exibe as escolhas do usuário, os valores sorteados e o percentual de acertos do usuário.
-# Ele segue a mesma lógica que os jogos de azar da internet de hje em dia
+
 
 #Se quiser rodar o código, acesse: https://www.online-python.com/
 #copie e cole o código abaixo, dê run e siga o passo a passo do joguinho!
