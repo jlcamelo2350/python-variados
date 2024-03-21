@@ -1,30 +1,35 @@
-## Esse programa simula um jogo em que o usuário escolhe entre os valores 0 e 1 (cara e coroa), e o computador sorteia valores aleatórios. O objetivo é prever o valor sorteado. O programa solicita ao usuário a quantidade de jogadas desejadas e, em seguida, pede que o usuário faça suas escolhas para cada jogada.
-# O programa então repete o processo de sorteio e comparação das escolhas do usuário com os valores sorteados. Ele continua esse processo até que o percentual de acertos do usuário seja menor ou igual a 30%. A probabilidade de acerto é calculada como o número de acertos (c) dividido pelo número total de jogadas (n).
+## Esse programa simula um jogo em que o usuário escolhe entre os valores 0 e 1 (cara e coroa), e o computador sorteia valores aleatórios. 
+#O objetivo é prever o valor sorteado. O programa solicita ao usuário a quantidade de jogadas desejadas e, em seguida, pede que o usuário faça suas escolhas para cada jogada.
+# O programa então repete o processo de sorteio e comparação das escolhas do usuário com os valores sorteados. 
+#Ele continua esse processo até que o percentual de acertos do usuário seja menor ou igual a 30%. A probabilidade de acerto é calculada como o número de acertos (c) dividido pelo número total de jogadas (n).
 # Ao final, o programa exibe as escolhas do usuário, os valores sorteados e o percentual de acertos do usuário.
 # Ele segue a mesma lógica que os jogos de azar da internet de hje em dia
 
-#Se quiser rodar o código: 
-#acesse: https://www.programiz.com/python-programming/online-compiler/
-#copie e cole o código abaixo e dê run!
+#Se quiser rodar o código, acesse: https://www.online-python.com/
+#copie e cole o código abaixo, dê run e siga o passo a passo do joguinho!
 
 
 import random
+import pandas as pd
 
 c = 0
 n = int(input("Quantidade de jogadas: "))
-lista_valores = [0, 1]
 valores_sorteados = []  # Lista com os valores sorteados
 escolhas_usuario = []  # Lista com os valores escolhidos pelo usuário
+print('No jogo, Cara = 0, Coroa = 1')
 
 # Preenche a lista de escolhas do usuário
 for i in range(1, n + 1):
-    escolha = int(input("Escolha um valor (0 ou 1): "))
-    escolhas_usuario.append(escolha)
-
-prob = 0.5
+    while True:
+        escolha = int(input("Escolha um valor (0 ou 1): "))
+        if escolha == 0 or escolha == 1:
+            escolhas_usuario.append("cara" if escolha == 0 else "coroa")
+            break
+        else:
+            print("Escolha inválida. Por favor, escolha 0 ou 1.")
 
 # O programa repete a operação de preencher a lista de sorteados enquanto o percentual de vitórias do usuário for maior que 30%
-while prob > 0.3:
+while True:
     # Reinicia o contador de acertos e a lista de valores sorteados
     c = 0
     valores_sorteados = []
@@ -32,7 +37,7 @@ while prob > 0.3:
     # Preenche a lista de valores sorteados
     for i in range(1, n + 1):
         x = random.randint(0,1)
-        valores_sorteados.append(x)
+        valores_sorteados.append("cara" if x == 0 else "coroa")
 
         # Verifica se o valor sorteado é igual à escolha do usuário na posição i-1
         if valores_sorteados[i - 1] == escolhas_usuario[i - 1]:
@@ -41,7 +46,14 @@ while prob > 0.3:
     # Atualiza a probabilidade como a razão entre o número de acertos (c) e o número total de jogadas (n)
     prob = c / n
 
-# Exibe os resultados do jogo
-print("Escolhas do usuário:", escolhas_usuario)
-print("Valores sorteados:", valores_sorteados)
-print("Percentual de acertos do usuário:", prob)
+    # Se a probabilidade for menor ou igual a 30%, interrompe o loop
+    if prob <= 0.3:
+        break
+
+# Monta e exibe os resultados como uma tabela:
+df = pd.DataFrame({'jogada': escolhas_usuario,'valor sorteado': valores_sorteados})
+print(df)
+
+
+#Exibe o percentual de acertos:
+print("Percentual de acertos do usuário:", prob,"%")
