@@ -3,6 +3,10 @@
 # Ao final, o programa exibe as escolhas do usuário, os valores sorteados e o percentual de acertos do usuário.
 # Ele segue a mesma lógica que os jogos de azar da internet de hje em dia
 
+#Se quiser rodar o código: 
+#acesse: https://www.programiz.com/python-programming/online-compiler/
+#copie e cole o código abaixo e dê run!
+
 
 import random
 
