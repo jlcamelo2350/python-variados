@@ -1,0 +1,20 @@
+print('Arranjo simples tem fórmula: (m!)/(m-p)!')
+m=int(input('Então digite o valor de m :'))
+p=int(input('e o valor de p :'))
+i=1
+j=1
+pm = m-p
+m_fat = m
+pm_fat = pm
+
+while(i < m):
+    m_fat = m_fat*i   #Calcula o fatorial de m, m!, fazendo n*1, depois (m*1)*2, depois (m*1*2)*3... até m-1
+    i += 1
+    if(pm_fat != 1):
+        while(j < pm):
+            pm_fat *= j   #Calcula o fatorial de p, p!
+            j += 1
+    else:
+        pm_fat=1          #Calcula o fatorial (m-p)!     
+arranjo_s = (m_fat) / (pm_fat)   #Nda mais é do que m!/(m-p)!, que é como se calcula arranjo simples
+print(arranjo_s)
