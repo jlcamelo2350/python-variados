@@ -19,11 +19,18 @@ dados$Y <- dados$xI + dados$xL + rnorm(nrow(dados))
 regI <- lm(Y ~ xI, data = dados)
 regL <- lm(Y ~ xL, data = dados)
 
+# Mostra na tela os resultados da regressão simples (RLS):
+summary(regI)
+summary(regL)
+
 # Cria um modelo de regressão múltipla
 reg <- lm(Y ~ xI + xL, data = dados)
 
-# Gráficos dos modelos
+#Mostra na tela os resultados da RLM(múltipla):
+summary(reg)
 
+
+# Gráficos dos modelos:
 # Modelo simples usando geom_smooth:
 ggplot(dados, aes(x = xI, y = Y)) +
   geom_point() +
