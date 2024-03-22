@@ -1,3 +1,6 @@
+## É o código utilizado para rodar a modelagem estatística apresentada no artigo Inovação, liberdade econômica e renda per capita
+##disponível aqui nesse mesmo github, no repositório economics.
+
 # Instala e carrega a biblioteca readxl para leitura de arquivos do Excel
 install.packages("readxl")
 library(readxl)
