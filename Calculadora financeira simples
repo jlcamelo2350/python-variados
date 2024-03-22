@@ -1,7 +1,7 @@
 ## Essa calculadora consegue calcular o valor presente, futuro, o número de períodos e a taxa de juros
 #Isso tanto em juros simples qto em juros compostos
 # Legenda: fv = valor futuro, pv = valor presente, i = taxa de juros e n = números de períodos
-#Exemplo de uso: quero calcular o valor de presente, ou seja,quanto um montante vale atualmente. Ótimo! 
+#Exemplo de uso: quero calcular o valor de presente, ou seja,quanto um montante final vale atualmente. Ótimo! 
 #Passo a passo pra fazer isso: vá em "Calc valor presente" -> procure: "print(pvjc(valor futuro, taxa de juros, número de períodos)" -> basta seguir a sintaxe, é tipo excel.
 
 import math
