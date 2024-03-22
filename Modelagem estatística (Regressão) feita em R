@@ -1,0 +1,44 @@
+# Instala e carrega a biblioteca readxl para leitura de arquivos do Excel
+install.packages("readxl")
+library(readxl)
+
+# Define o caminho do arquivo Excel a ser lido
+caminho <- "C:/Users/Vitória/Downloads/reg/countries.xlsx"
+
+# Lê os dados do arquivo Excel
+dados <- read_excel(caminho)
+
+# Converte as colunas xI e xL para numérico para evitar problemas
+dados$xI <- as.numeric(dados$xI)
+dados$xL <- as.numeric(dados$xL)
+
+# Cria uma variável Y com base nas colunas xI, xL e um erro randômico
+dados$Y <- dados$xI + dados$xL + rnorm(nrow(dados))
+
+# Cria modelos de regressão simples
+regI <- lm(Y ~ xI, data = dados)
+regL <- lm(Y ~ xL, data = dados)
+
+# Cria um modelo de regressão múltipla
+reg <- lm(Y ~ xI + xL, data = dados)
+
+# Gráficos dos modelos
+
+# Modelo simples usando geom_smooth:
+ggplot(dados, aes(x = xI, y = Y)) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "red") +
+  labs(x = "Inovação", y = "PIB per capita", title = "Regressão Linear: Inovação x PIB per Capita")
+
+# Modelo simples usando geom_line
+dados$pred <- predict(regL) # Estima os valores previstos para Y no modelo Y ~ xL
+ggplot(dados, aes(x = xL, y = Y)) +
+  geom_point() +
+  geom_line(aes(y = pred), color = "blue") +
+  labs(x = "Liberdade econômica", y = "PIB per capita", title = "Regressão Linear: Liberdade x PIB per Capita")
+
+# Modelo múltiplo
+ggplot(dados, aes(x = Y, y = predict(reg))) +
+  geom_point() +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "navy") +
+  labs(x = "Valores Observados (Y)", y = "Valores Previstos (Y)", title = "Regressão Linear Múltipla: Inovação+Liberdade x PIB per Capita")
