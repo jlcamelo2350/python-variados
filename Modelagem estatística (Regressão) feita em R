@@ -6,7 +6,7 @@ install.packages("readxl")
 library(readxl)
 
 # Define o caminho do arquivo Excel a ser lido
-caminho <- "C:/Users/Vitória/Downloads/reg/countries.xlsx"
+caminho <- "C:/Users/Alves/Downloads/reg/countries.xlsx"
 
 # Lê os dados do arquivo Excel
 dados <- read_excel(caminho)
