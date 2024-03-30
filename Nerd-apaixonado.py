@@ -1,3 +1,4 @@
+## Jogo simples utilizando a biblioteca pygame, em que se deve atingir o retângulo com a bola no tempo. No final das contas, se tratava apenas de uma declaração... 
 import pygame
 import random
 import time
@@ -45,7 +46,7 @@ tempo_inicial = time.time()
 fonte = pygame.font.SysFont(None, 36)
 
 # Carregar a música
-pygame.mixer.music.load('C:/Users/Vitória/Downloads/ssstik.io_1711805281187.mp3')
+pygame.mixer.music.load('C:/Users/Vitória/Downloads/song1.mp3') ##Escolha um mp3 e cole o local do arquivo
 
 # Loop principal
 running = True
@@ -78,17 +79,22 @@ while running:
             tempo_limite -= 1
         rodada +=1
         if rodada == 13:
+
             texto_vitoria = fonte.render("Claro q cê venceu, tô morrendo de saudade Vida!!", True, (0, 0, 0), (255, 255, 255))
-            pygame.time.delay(9000)
+            pygame.time.delay(5000)
+            texto_vitoria0 = fonte.render("Bora fazer as pazes, depois ir numa roda de samba?", True, (0, 0, 0), (255, 255, 255))
+            pygame.time.delay(2000)
             pygame.mixer.music.play()
-        
-            # Desenhar o texto na tela
+    
+    # Desenhar o texto na tela
             janela.blit(texto_vitoria, (largura // 2 - texto_vitoria.get_width() // 2, altura // 2 - texto_vitoria.get_height() // 2))
+            janela.blit(texto_vitoria0, (largura // 2 - texto_vitoria0.get_width() // 2, altura // 2 + texto_vitoria.get_height() // 2 + 10))
 
             pygame.display.update()
-             # Aguarda 10 segundos antes de encerrar o jogo
-            pygame.time.delay(100000)
+    # Aguarda 10 segundos antes de encerrar o jogo
+            pygame.time.delay(10000)
             running = False  # Encerra o jogo
+
 
     # Desenhar na tela
     janela.fill(branco)
