@@ -2,6 +2,8 @@
 import pygame
 import random
 import time
+import gdown
+import os
 from pygame.locals import *
 from sys import exit
 
@@ -25,7 +27,7 @@ bola_pos = [largura // 2, altura // 2]
 bola_raio = 15
 velocidade = 10
 
-# Função para gerar uma posição aleatória dentro da tela
+# Função para gerar uma posição aleatória da dentro da tela
 def gerar_alvo():
     return [random.randint(0, largura - alvo_largura), random.randint(0, altura - alvo_altura)]
 
@@ -45,8 +47,17 @@ tempo_inicial = time.time()
 # Fonte para exibir o tempo
 fonte = pygame.font.SysFont(None, 36)
 
+# URL do arquivo MP3 no Google Drive (link de download direto)
+url = 'https://drive.google.com/uc?id=1nvf6C1ztpVBNKzeS-MKhJvdVx7kiaVLX'
+
+
+# Faça o download do arquivo MP3
+downloads_dir = os.path.join(os.path.expanduser('~'), 'Downloads')
+caminho_arquivo_mp3 = os.path.join(downloads_dir, 'musica.wav')
+gdown.download(url, caminho_arquivo_mp3, quiet=False)
+
 # Carregar a música
-pygame.mixer.music.load('C:/Users/Vitória/Downloads/song1.wav') ##Escolha um mp3 e cole o local do arquivo
+pygame.mixer.music.load('C:/Users/Vitória/Downloads/musica.wav')
 
 # Loop principal
 running = True
@@ -68,8 +79,7 @@ while running:
     if teclas[pygame.K_DOWN]:
         bola_pos[1] += velocidade
 
-
-#Agora vem uma parte chave do código: uma condição que verifica se a bola acerta o alvo. 
+    #Agora vem uma parte chave do código: uma condição que verifica se a bola acerta o alvo. 
 #Se todas essas condições colocadas forem verdadeiras e o tempo limite for maior que zero, significa que a bola atingiu o alvo no tempo e, portanto, um novo alvo deve ser gerado (alvo_pos = gerar_alvo()).
 
 #Exemplo explicativo de uma condição que deve ser satisfeita: bola_pos[0] - bola_raio <= alvo_pos[0] + alvo_largura: Isso verifica se a posição x da bola menos o raio da bola é menor 
@@ -77,7 +87,7 @@ while running:
 #Perceba: bola_pos[0]: Essa variável representa a posição x da bola. Em um plano bidimensional, a posição x é a coordenada horizontal, e y a vertical, onde a bola está localizada.
      #enquanto, por exemplo, bola_pos[1], verifica a posição da bola em y
 #Assim a localização da bola é representada por bola_pos[0][1], para (x,y).
-
+    
     # Verifica se a bola atingiu o alvo:
     if (bola_pos[0] + bola_raio >= alvo_pos[0] and bola_pos[0] - bola_raio <= alvo_pos[0] + alvo_largura and
         bola_pos[1] + bola_raio >= alvo_pos[1] and bola_pos[1] - bola_raio <= alvo_pos[1] + alvo_altura) and tempo_limite >= 0:
@@ -89,7 +99,6 @@ while running:
             tempo_limite -= 1
         rodada +=1
         if rodada == 13:
-
             texto_vitoria = fonte.render("Claro q cê venceu, tô morrendo de saudade Vida!!", True, (0, 0, 0), (255, 255, 255))
             pygame.time.delay(5000)
             texto_vitoria0 = fonte.render("Bora fazer as pazes, depois ir numa roda de samba?", True, (0, 0, 0), (255, 255, 255))
@@ -105,11 +114,9 @@ while running:
             pygame.display.update()
             pygame.time.delay(2000)
 
-            # Aguarda 100 segundos antes de encerrar o jogo
-            pygame.time.delay(100000)
+            # Aguarda 40 segundos antes de encerrar o jogo
+            pygame.time.delay(40000)
             running = False  # Encerra o jogo
-
-
     # Desenhar na tela
     janela.fill(branco)
     pygame.draw.rect(janela, verde, (alvo_pos[0], alvo_pos[1], alvo_largura, alvo_altura))
