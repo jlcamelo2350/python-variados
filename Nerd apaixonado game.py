@@ -78,7 +78,7 @@ while running:
         elif tempo_limite <= 5:
             tempo_limite -= 1
         rodada +=1
-        if rodada == 5:
+        if rodada == 13:
 
             texto_vitoria = fonte.render("Claro q cê venceu, tô morrendo de saudade Vida!!", True, (0, 0, 0), (255, 255, 255))
             pygame.time.delay(5000)
