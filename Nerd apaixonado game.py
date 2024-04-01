@@ -68,7 +68,17 @@ while running:
     if teclas[pygame.K_DOWN]:
         bola_pos[1] += velocidade
 
-    # Verifica se a bola atingiu o alvo
+
+#Agora vem uma parte chave do código: uma condição que verifica se a bola acerta o alvo. 
+#Se todas essas condições colocadas forem verdadeiras e o tempo limite for maior que zero, significa que a bola atingiu o alvo no tempo e, portanto, um novo alvo deve ser gerado (alvo_pos = gerar_alvo()).
+
+#Exemplo explicativo de uma condição que deve ser satisfeita: bola_pos[0] - bola_raio <= alvo_pos[0] + alvo_largura: Isso verifica se a posição x da bola menos o raio da bola é menor 
+    #ou igual à posição x do canto superior direito do alvo (alvo_pos[0] + alvo_largura). Ou seja, verifica se a bola está à esquerda ou sobre o limite direito do alvo.
+#Perceba: bola_pos[0]: Essa variável representa a posição x da bola. Em um plano bidimensional, a posição x é a coordenada horizontal, e y a vertical, onde a bola está localizada.
+     #enquanto, por exemplo, bola_pos[1], verifica a posição da bola em y
+#Assim a localização da bola é representada por bola_pos[0][1], para (x,y).
+
+    # Verifica se a bola atingiu o alvo:
     if (bola_pos[0] + bola_raio >= alvo_pos[0] and bola_pos[0] - bola_raio <= alvo_pos[0] + alvo_largura and
         bola_pos[1] + bola_raio >= alvo_pos[1] and bola_pos[1] - bola_raio <= alvo_pos[1] + alvo_altura) and tempo_limite >= 0:
         alvo_pos = gerar_alvo()
@@ -95,7 +105,7 @@ while running:
             pygame.display.update()
             pygame.time.delay(2000)
 
-            # Aguarda 10 segundos antes de encerrar o jogo
+            # Aguarda 100 segundos antes de encerrar o jogo
             pygame.time.delay(100000)
             running = False  # Encerra o jogo
 
