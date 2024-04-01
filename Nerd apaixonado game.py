@@ -25,7 +25,7 @@ bola_pos = [largura // 2, altura // 2]
 bola_raio = 15
 velocidade = 10
 
-# Função para gerar uma posição aleatória da dentro da tela
+# Função para gerar uma posição aleatória dentro da tela
 def gerar_alvo():
     return [random.randint(0, largura - alvo_largura), random.randint(0, altura - alvo_altura)]
 
@@ -46,7 +46,7 @@ tempo_inicial = time.time()
 fonte = pygame.font.SysFont(None, 36)
 
 # Carregar a música
-pygame.mixer.music.load('C:/Users/Vitória/Downloads/song1.mp3') ##Escolha um mp3 e cole o local do arquivo
+pygame.mixer.music.load('C:/Users/Vitória/Downloads/song1.wav') ##Escolha um mp3 e cole o local do arquivo
 
 # Loop principal
 running = True
@@ -78,21 +78,25 @@ while running:
         elif tempo_limite <= 5:
             tempo_limite -= 1
         rodada +=1
-        if rodada == 13:
+        if rodada == 5:
 
             texto_vitoria = fonte.render("Claro q cê venceu, tô morrendo de saudade Vida!!", True, (0, 0, 0), (255, 255, 255))
             pygame.time.delay(5000)
             texto_vitoria0 = fonte.render("Bora fazer as pazes, depois ir numa roda de samba?", True, (0, 0, 0), (255, 255, 255))
             pygame.time.delay(2000)
             pygame.mixer.music.play()
-    
-    # Desenhar o texto na tela
-            janela.blit(texto_vitoria, (largura // 2 - texto_vitoria.get_width() // 2, altura // 2 - texto_vitoria.get_height() // 2))
-            janela.blit(texto_vitoria0, (largura // 2 - texto_vitoria0.get_width() // 2, altura // 2 + texto_vitoria.get_height() // 2 + 10))
 
+            # Mostra o texto em sequência
+            janela.blit(texto_vitoria, (largura // 2 - texto_vitoria.get_width() // 2, altura // 2 - texto_vitoria.get_height() // 2))
             pygame.display.update()
-    # Aguarda 10 segundos antes de encerrar o jogo
-            pygame.time.delay(10000)
+            pygame.time.delay(5000)
+
+            janela.blit(texto_vitoria0, (largura // 2 - texto_vitoria0.get_width() // 2, altura // 2 - texto_vitoria0.get_height() // 2))
+            pygame.display.update()
+            pygame.time.delay(2000)
+
+            # Aguarda 10 segundos antes de encerrar o jogo
+            pygame.time.delay(100000)
             running = False  # Encerra o jogo
 
 
