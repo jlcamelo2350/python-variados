@@ -4,9 +4,12 @@
 # Instala e carrega a biblioteca readxl para leitura de arquivos do Excel
 install.packages("readxl")
 library(readxl)
+#Instala e carrega a biblioteca ggplot2 para gráficos
+install.packages("ggplot2")
+library(ggplot2)
 
 # Define o caminho do arquivo Excel a ser lido
-caminho <- "C:/Users/Alves/Downloads/reg/countries.xlsx"
+caminho <- "C:/Users/Alves/Downloads/reg/countries.xlsx" ##local onde está armazenado a tabela que utilizei para a modelagem
 
 # Lê os dados do arquivo Excel
 dados <- read_excel(caminho)
@@ -15,11 +18,11 @@ dados <- read_excel(caminho)
 dados$xI <- as.numeric(dados$xI)
 dados$xL <- as.numeric(dados$xL)
 
-# Cria uma variável Y com base nas colunas xI, xL e um erro randômico
+# Cria-se o modelo de regressão com Y sendo a variável dependente, as colunas xI, xL contendo os valores das variáveis independentes e um erro randômico (rnorm)
 dados$Y <- dados$xI + dados$xL + rnorm(nrow(dados))
 
 # Cria modelos de regressão simples
-regI <- lm(Y ~ xI, data = dados)
+regI <- lm(Y ~ xI, data = dados) ##Y como variável dependente e xI como variável independente
 regL <- lm(Y ~ xL, data = dados)
 
 # Mostra na tela os resultados da regressão simples (RLS):
