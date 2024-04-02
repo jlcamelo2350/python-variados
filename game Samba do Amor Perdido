@@ -49,12 +49,17 @@ fonte = pygame.font.SysFont(None, 36)
 
 # URL do arquivo MP3 no Google Drive (link de download direto)
 url = 'https://drive.google.com/uc?id=1nvf6C1ztpVBNKzeS-MKhJvdVx7kiaVLX'
+
 # Faz o download do arquivo de mídia que tocará em caso de vitória do usuário:
 downloads_dir = os.path.join(os.path.expanduser('~'), 'Downloads') ## cria uma variável chamada downloads_dir que armazena o caminho para o diretório de downloads do usuário.
+
 caminho_arquivo = os.path.join(downloads_dir, 'musica.wav') ##cria uma variável caminho_arquivo_mp3 que armazena o caminho completo para um arquivo chamado 'musica.wav' dentro do diretório de downloads do usuário.
+
 gdown.download(url, caminho_arquivo, quiet=False)
+
 # Carrega a música
 pygame.mixer.music.load('C:/Users/Vitória/Downloads/musica.wav')
+
 
 # Loop principal
 running = True
