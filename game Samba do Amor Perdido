@@ -1,22 +1,22 @@
-## Jogo simples utilizando a biblioteca pygame, em que se deve atingir o retângulo com a bola no tempo. No final das contas, se tratava apenas de uma declaração... 
+## Jogo simples utilizando a biblioteca pygame, em que se deve atingir o retângulo com a bola no tempo. 
+#No final das contas, se tratava apenas de uma declaração... 
 import pygame
 import random
-import time
-import gdown
-import os
-from pygame.locals import *
+import time ##fornece várias funções relacionadas ao tempo
+import gdown ##possibilita o download de arquivos do google drive
+import os   ##fornece funcionalidades para interagir com o sistema operacional
 from sys import exit
 
 # Inicialização do Pygame
 pygame.init()
 pygame.mixer.init()
 
-# Configurações da janela
+# Configurações da janela (onde o jogo vai rodar):
 largura, altura = 640, 480
 janela = pygame.display.set_mode((largura, altura))
-pygame.display.set_caption("Nerd apaixonado 😏")
+pygame.display.set_caption("nerd apaixonado 😏")
 
-# Cores
+# Cores: a config. segue aquela RGB (red, green, blue)
 branco = (255, 255, 255)
 vermelho = (255, 0, 0)
 verde = (0, 255, 0)
@@ -50,16 +50,14 @@ fonte = pygame.font.SysFont(None, 36)
 # URL do arquivo MP3 no Google Drive (link de download direto)
 url = 'https://drive.google.com/uc?id=1nvf6C1ztpVBNKzeS-MKhJvdVx7kiaVLX'
 
-# Faz o download do arquivo de mídia que tocará em caso de vitória do usuário:
-downloads_dir = os.path.join(os.path.expanduser('~'), 'Downloads') ## cria uma variável chamada downloads_dir que armazena o caminho para o diretório de downloads do usuário.
 
-caminho_arquivo = os.path.join(downloads_dir, 'musica.wav') ##cria uma variável caminho_arquivo_mp3 que armazena o caminho completo para um arquivo chamado 'musica.wav' dentro do diretório de downloads do usuário.
+# Faça o download do arquivo
+downloads_dir = os.path.join(os.path.expanduser('~'), 'Downloads') ##irei armazenar o arquivo na pasta download do jogador
+caminho_arquivo = os.path.join(downloads_dir, 'musica.wav')  ##esse arquivo se chamará musica e estará em formato wav
+gdown.download(url, caminho_arquivo_mp3, quiet=False)  ##faz o download
 
-gdown.download(url, caminho_arquivo, quiet=False)
-
-# Carrega a música
-pygame.mixer.music.load('C:/Users/Vitória/Downloads/musica.wav')
-
+# Carregar a música no jogo
+pygame.mixer.music.load('C:/Users/Alves/Downloads/musica.wav') ##local do arquivo que foi carregado no jogo
 
 # Loop principal
 running = True
@@ -80,7 +78,6 @@ while running:
         bola_pos[1] -= velocidade
     if teclas[pygame.K_DOWN]:
         bola_pos[1] += velocidade
-        
 
 #Agora vem uma parte chave do código: uma condição que verifica se a bola acerta o alvo. 
 #Se todas essas condições colocadas forem verdadeiras e o tempo limite for maior que zero, significa que a bola atingiu o alvo no tempo e, portanto, um novo alvo deve ser gerado (alvo_pos = gerar_alvo()).
@@ -90,7 +87,7 @@ while running:
 #Perceba: bola_pos[0]: Essa variável representa a posição x da bola. Em um plano bidimensional, a posição x é a coordenada horizontal, e y a vertical, onde a bola está localizada.
      #enquanto, por exemplo, bola_pos[1], verifica a posição da bola em y
 #Assim a localização da bola é representada por bola_pos[0][1], para (x,y).
-       
+    
     # Verifica se a bola atingiu o alvo:
     if (bola_pos[0] + bola_raio >= alvo_pos[0] and bola_pos[0] - bola_raio <= alvo_pos[0] + alvo_largura and
         bola_pos[1] + bola_raio >= alvo_pos[1] and bola_pos[1] - bola_raio <= alvo_pos[1] + alvo_altura) and tempo_limite >= 0:
@@ -101,13 +98,12 @@ while running:
         elif tempo_limite <= 5:
             tempo_limite -= 1
         rodada +=1
-            
-        if rodada == 13:  ##ou seja, se o usuário ultrapassa a última rodada
-            texto_vitoria = fonte.render("Claro q cê venceu; tô morrendo de saudade Vida!!", True, (0, 0, 0), (255, 255, 255))
+        if rodada == 13:
+            texto_vitoria = fonte.render("Claro q cê venceu, tô morrendo de saudade Vida!!", True, (0, 0, 0), (255, 255, 255))
             pygame.time.delay(5000)
             texto_vitoria0 = fonte.render("Bora fazer as pazes, depois ir numa roda de samba?", True, (0, 0, 0), (255, 255, 255))
             pygame.time.delay(2000)
-            pygame.mixer.music.play()
+            pygame.mixer.music.play()  ##aqui é dado o play na musiquinha
 
             # Mostra o texto em sequência
             janela.blit(texto_vitoria, (largura // 2 - texto_vitoria.get_width() // 2, altura // 2 - texto_vitoria.get_height() // 2))
