@@ -14,7 +14,7 @@ pygame.mixer.init()
 # Configurações da janela
 largura, altura = 640, 480
 janela = pygame.display.set_mode((largura, altura))
-pygame.display.set_caption("Jogo: nerd apaixonado 😏")
+pygame.display.set_caption("Nerd apaixonado 😏")
 
 # Cores
 branco = (255, 255, 255)
