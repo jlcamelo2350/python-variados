@@ -1,8 +1,6 @@
-## Esse programa simula um jogo em que o usuário tenta adivinhar se vai se sair cara (0) ou coroa (1)
+## Esse programa simula um jogo em que o usuário tenta adivinhar se vai se sair cara (0) ou coroa (1). 
 # Ele segue a mesma lógica que os jogos de azar da internet de hje em dia! Ou seja, o usuário vai perder sempre que o algoritmo quiser😉
-
-#O objetivo é prever o valor sorteado.
-
+#Nessa versão, o usuário jamais ganhará acima de 30% das vezes
 
 #Se quiser rodar o código, acesse: https://www.online-python.com/
 #copie e cole o código abaixo, dê run e siga o passo a passo do joguinho!
