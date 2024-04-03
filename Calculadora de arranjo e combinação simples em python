@@ -12,10 +12,10 @@ def calcular_combinacao_simples(n, p):
     while i < n:  ###nesse primeiro while calcularei n!
         n_fat = n_fat * i
         i += 1
-        while j < q:  ###nesse primeiro while calcularei p!
+        while j < q:  ###nesse while calcularei p!
             p_fat *= j
             j += 1
-        if pn_fat != 1:  ##nesse terceiro while, calculo (n-p)!
+        if pn_fat != 1:  ##agora, calculo (n-p)!
             while j < p:
                 pn_fat *= j
                 j += 1
