@@ -51,13 +51,14 @@ fonte = pygame.font.SysFont(None, 36)
 url = 'https://drive.google.com/uc?id=1nvf6C1ztpVBNKzeS-MKhJvdVx7kiaVLX'
 
 
-# Faça o download do arquivo
 downloads_dir = os.path.join(os.path.expanduser('~'), 'Downloads') ##irei armazenar o arquivo na pasta download do jogador
 caminho_arquivo = os.path.join(downloads_dir, 'musica.wav')  ##esse arquivo se chamará musica e estará em formato wav
-gdown.download(url, caminho_arquivo_mp3, quiet=False)  ##faz o download
+
+# Faz o download do arquivo
+gdown.download(url, caminho_arquivo, quiet=False)  ##faz o download
 
 # Carregar a música no jogo
-pygame.mixer.music.load('C:/Users/Alves/Downloads/musica.wav') ##local do arquivo que foi carregado no jogo
+pygame.mixer.music.load(caminho_arquivo)
 
 # Loop principal
 running = True
@@ -98,11 +99,11 @@ while running:
         elif tempo_limite <= 5:
             tempo_limite -= 1
         rodada +=1
-        if rodada == 13:
+        if rodada == 12:
             texto_vitoria = fonte.render("Claro q cê venceu, tô morrendo de saudade Vida!!", True, (0, 0, 0), (255, 255, 255))
-            pygame.time.delay(5000)
+
             texto_vitoria0 = fonte.render("Bora fazer as pazes, depois ir numa roda de samba?", True, (0, 0, 0), (255, 255, 255))
-            pygame.time.delay(2000)
+            
             pygame.mixer.music.play()  ##aqui é dado o play na musiquinha
 
             # Mostra o texto em sequência
