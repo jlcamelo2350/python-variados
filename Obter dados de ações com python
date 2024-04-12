@@ -19,7 +19,7 @@ bb = yf.download('BBAS3.SA', start=start, end=end)
 itau = yf.download('ITUB4.SA', start=start, end=end)
 petrorio = yf.download('PRIO3.SA', start=start, end=end)
 
-# Juntar os DataFrames em um único DataFrame
+# Juntar as listas com dados em um único DataFrame
 df = pd.concat([petrobras['Adj Close'], bb['Adj Close'], itau['Adj Close'], petrorio['Adj Close']], axis=1)
 df.columns = ['Petrobras', 'Banco do Brasil', 'Itaú', 'PetroRio']  # Renomear as colunas
 
