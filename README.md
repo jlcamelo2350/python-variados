@@ -1,2 +1,1 @@
-Códigos variados em python e r, com ênfase na utilização de ferramentas para análise de dados e automação de tarefas.
-No entanto, também possui códigos mais criativos como alguns games
+Códigos variados em python, como alguns games
