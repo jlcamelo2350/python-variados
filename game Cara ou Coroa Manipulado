@@ -1,3 +1,4 @@
+``` python
 ## Esse programa simula um jogo em que o usuário tenta adivinhar se vai se sair cara (0) ou coroa (1). 
 # Ele segue a mesma lógica que os jogos de azar da internet de hje em dia! Ou seja, o usuário vai perder sempre que o algoritmo quiser😉
 #Nessa versão, o usuário jamais ganhará acima de 30% das vezes
@@ -50,7 +51,7 @@ while True:
 # Monta e exibe os resultados como uma tabela:
 df = pd.DataFrame({'jogada': escolhas_usuario,'valor sorteado': valores_sorteados})
 print(df)
-
+```
 
 #Exibe o percentual de acertos:
 print("Percentual de acertos do usuário:", prob,"%")
