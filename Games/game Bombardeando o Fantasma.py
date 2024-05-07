@@ -1,4 +1,5 @@
 #É um game simples em que um fantasma é bombardeado por vários tipos de objetos e deve simplesmente desviar deles durante um determinado período de tempo.
+
 #Importa-se as bibliotecas
 import pygame
 import sys 
@@ -58,7 +59,6 @@ time = TIME_LIMIT  # Inicializa o tempo restante do jogo
 
 # URL do arquivo MP3 no Google Drive (link de download direto) - caso de vitória
 url = 'https://drive.google.com/uc?export=download&id=12st5I2ULE4jWAyauu9ecZ5K0l5mDM1Vt'
-
 
 downloads_dir = os.path.join(os.path.expanduser('~'), 'Downloads') ##irei armazenar o arquivo na pasta download do jogador
 caminhow = os.path.join(downloads_dir, 'game_Wmusic.wav')  ##esse arquivo se chamará game-Wmusic e estará em formato wav
