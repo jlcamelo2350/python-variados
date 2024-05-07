@@ -44,7 +44,7 @@ class FallingObject(pygame.sprite.Sprite):
         self.rect.y += self.speed  # Atualiza a posição do objeto para fazê-lo cair
 
 # Variáveis e Grupos
-ball_group = pygame.sprite.Group()  # Cria um grupo para a bola
+ball_group = pygame.sprite.Group()  # Cria um grupo para o fantasma
 falling_objects_group = pygame.sprite.Group()  # Cria um grupo para os objetos que caem
 clock = pygame.time.Clock()  # Cria um objeto Clock para controlar o FPS do jogo
 
@@ -61,20 +61,20 @@ url = 'https://drive.google.com/uc?export=download&id=12st5I2ULE4jWAyauu9ecZ5K0l
 
 
 downloads_dir = os.path.join(os.path.expanduser('~'), 'Downloads') ##irei armazenar o arquivo na pasta download do jogador
-caminhow = os.path.join(downloads_dir, 'game_Wmusic.wav')  ##esse arquivo se chamará musica e estará em formato wav
+caminhow = os.path.join(downloads_dir, 'game_Wmusic.wav')  ##esse arquivo se chamará game-Wmusic e estará em formato wav
 
-# Faz o download do arquivo
-gdown.download(url, caminhow, quiet=False)  ##faz o download
+# Faz o download da winner music
+gdown.download(url, caminhow, quiet=False)
 
 # URL do arquivo MP3 no Google Drive (link de download direto) - caso de derrota
 url = 'https://drive.google.com/uc?export=download&id=1YLl-D0LQkY3qcWtPA780CXriHnQYA9kQ'
 
-
+#Local onde o arquivo será guardado na pasta de downloads do jogador
 downloads_dir = os.path.join(os.path.expanduser('~'), 'Downloads') ##irei armazenar o arquivo na pasta download do jogador
-caminhol = os.path.join(downloads_dir, 'game_Lmusic.wav')  ##esse arquivo se chamará musica e estará em formato wav
+caminhol = os.path.join(downloads_dir, 'game_Lmusic.wav')  ##esse arquivo se chamará game_Lmusic e estará em formato wav
 
-# Faz o download do arquivo
-gdown.download(url, caminhol, quiet=False)  ##faz o download
+ ##faz o download da musiquinha da derrota
+gdown.download(url, caminhol, quiet=False)
 
 # Loop Principal do jogo:
 while True:
