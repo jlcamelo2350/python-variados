@@ -1,4 +1,4 @@
-#É um game simples em que um fantasma é bombardeando por vários e deve desviar deles durante um determinado período de tempo.
+#É um game simples em que um fantasma é bombardeado por vários tipos de objetos e deve simplesmente desviar deles durante um determinado período de tempo.
 #Importa-se as bibliotecas
 import pygame
 import sys 
@@ -53,7 +53,7 @@ ball_group.add(ball)  # Adiciona a bola ao grupo de sprites da bola
 
 player_x = WIDTH // 2  # Define a posição inicial do jogador no centro da tela
 
-TIME_LIMIT = 360  # Define o limite de tempo do jogo em frames (60 segundos * 60 FPS)
+TIME_LIMIT = 3600  # Define o limite de tempo do jogo em frames (60 segundos * 60 FPS)
 time = TIME_LIMIT  # Inicializa o tempo restante do jogo
 
 # URL do arquivo MP3 no Google Drive (link de download direto) - caso de vitória
