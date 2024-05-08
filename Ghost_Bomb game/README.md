@@ -1,1 +1,55 @@
+# Explodam o Fantasma!
 
+Um jogo simples e divertido onde você deve desviar de objetos que caem para proteger o fantasma!
+
+## Descrição:
+
+Nesse jogo, você controla um fantasma que precisa desviar de diversos objetos que caem do céu. O objetivo é sobreviver por um determinado tempo, evitando que os objetos o atinjam. O jogo possui música de fundo e sons para aumentar a imersão e a emoção.
+
+### Funcionalidades:
+
+    Controle o fantasma com as teclas esquerda e direita.
+    Desvie de diversos objetos que caem do céu.
+    Sobreviva por um determinado tempo para vencer.
+    Música de fundo e sons para aumentar a imersão.
+    Download automático de músicas de vitória e derrota.
+
+### Requisitos:
+
+    Python 3.x
+    Pygame
+    gdown
+
+### Instalação:
+
+    Clone o repositório:
+
+git clone https://github.com/SEU_USUARIO/Explodam-o-Fantasma.git
+
+    Instale as dependências:
+
+pip install pygame gdown
+
+    Execute o jogo:
+
+python main.py
+
+Contribuição:
+
+Sinta-se à vontade para contribuir com o projeto! Você pode enviar sugestões de melhorias, corrigir bugs ou até mesmo criar novos recursos.
+
+Licença:
+
+Este projeto está sob a licença MIT.
+
+Links:
+
+    Repositório do Github: [URL inválido removido]
+    Documentação do Pygame: https://www.pygame.org/
+    Biblioteca gdown: https://github.com/wkentaro/gdown
+
+Agradecimentos:
+
+Ao time do Pygame e aos desenvolvedores da biblioteca gdown por suas ferramentas incríveis.
+
+Espero que você se divirta jogando Explodam o Fantasma!
