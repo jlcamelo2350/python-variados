@@ -5,7 +5,6 @@
 #Se quiser rodar o código, acesse: https://www.online-python.com/
 #copie e cole o código abaixo, dê run e siga o passo a passo do joguinho!
 
-
 import random
 import pandas as pd
 
@@ -14,6 +13,7 @@ n = int(input("Quantidade de jogadas: "))
 valores_sorteados = []  # Lista com os valores sorteados
 escolhas_usuario = []  # Lista com os valores escolhidos pelo usuário
 print('No jogo, Cara = 0, Coroa = 1')
+print()
 
 # Preenche a lista de escolhas do usuário
 for i in range(1, n + 1):
@@ -47,6 +47,7 @@ while True:
     if prob <= 0.3:
         break
 
+print()
 # Monta e exibe os resultados como uma tabela:
 df = pd.DataFrame({'jogada': escolhas_usuario,'valor sorteado': valores_sorteados})
 print(df)
