@@ -1,4 +1,4 @@
-# Explodam o Fantasma!
+## Explodam o Fantasma!
 
 Um jogo simples e divertido onde você deve desviar de objetos que caem para proteger o fantasma!
 
@@ -19,11 +19,6 @@ Download automático de músicas de vitória e derrota.
     Pygame
     gdown
 
-### Instalação:
-
-    Clone o repositório:
-
-git clone https://github.com/jlcam2350/Explodam-o-Fantasma.git
 
     Instale as dependências:
 
