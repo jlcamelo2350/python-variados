@@ -7,12 +7,11 @@ Um jogo simples e divertido onde você deve desviar de objetos que caem para pro
 Nesse jogo, você controla um fantasma que precisa desviar de diversos objetos que caem do céu. O objetivo é sobreviver por um determinado tempo, evitando que os objetos o atinjam. O jogo possui música de fundo e sons para aumentar a imersão e a emoção.
 
 ### Funcionalidades:
-
-    Controle o fantasma com as teclas esquerda e direita.
-    Desvie de diversos objetos que caem do céu.
-    Sobreviva por um determinado tempo para vencer.
-    Música de fundo e sons para aumentar a imersão.
-    Download automático de músicas de vitória e derrota.
+Controle o fantasma com as teclas esquerda e direita.
+Desvie de diversos objetos que caem do céu.
+Sobreviva por um determinado tempo para vencer.
+Música de fundo e sons para aumentar a imersão.
+Download automático de músicas de vitória e derrota.
 
 ### Requisitos:
 
@@ -24,7 +23,7 @@ Nesse jogo, você controla um fantasma que precisa desviar de diversos objetos q
 
     Clone o repositório:
 
-git clone https://github.com/SEU_USUARIO/Explodam-o-Fantasma.git
+git clone https://github.com/jlcam2350/Explodam-o-Fantasma.git
 
     Instale as dependências:
 
@@ -44,7 +43,7 @@ Este projeto está sob a licença MIT.
 
 Links:
 
-    Repositório do Github: [URL inválido removido]
+    Repositório do Github: https://github.com/jlcamelo2350/python-variados
     Documentação do Pygame: https://www.pygame.org/
     Biblioteca gdown: https://github.com/wkentaro/gdown
 
@@ -52,4 +51,4 @@ Agradecimentos:
 
 Ao time do Pygame e aos desenvolvedores da biblioteca gdown por suas ferramentas incríveis.
 
-Espero que você se divirta jogando Explodam o Fantasma!
+Espero que você se divirta jogando o Ghost Bomb
