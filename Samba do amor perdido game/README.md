@@ -35,9 +35,3 @@ Sinta-se à vontade para contribuir com este projeto! Envie suas sugestões, cor
 Licença:
 Este projeto está licenciado sob a licença MIT.
 
-
-Observações:
-
-    Este jogo foi criado para fins educacionais e de entretenimento.
-    O código pode ser modificado e adaptado de acordo com suas necessidades.
-    Certifique-se de ler os comentários no código para entender melhor a lógica do jogo.
