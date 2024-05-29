@@ -1,3 +1,4 @@
+#Bibliotecas que utilizarei
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -8,23 +9,25 @@ caminho = r"C:\Users\Vitória\Downloads\dados_inf.xlsx"
 # Crio o dataframe df onde carregarei a planilha Excel
 df = pd.read_excel(caminho)
 
-# Criar uma coluna de data a partir do ano
+# Criar uma coluna de data anual, para ser o index
 df['data'] = pd.to_datetime(df['ano'], format='%Y')
 df.set_index('data', inplace=True)
 
 # Calcular a média móvel de 3 anos
 df['media_movel'] = df['inflação'].rolling(window=3).mean()
 
-# Plotar a inflação ao longo do tempo
+# Plotar a inflação ao longo do tempo:
+
+#Crira a figura:
 plt.figure(figsize=(10, 6))
 
-# Plotar os dados originais de inflação
+# Plotar os dados de inflação
 plt.plot(df.index, df['inflação'], label='Inflação', color='green', linewidth = 3)
 
 # Plotar a média móvel
 plt.plot(df.index, df['media_movel'], label='Média Móvel (3 anos)', color='blue', linestyle='--', linewidth = 1)
 
-# Adicionar linha de tendência
+# Adicionar uma linha de tendência
 coeficientes = np.polyfit(df.index.year, df['inflação'], 1)
 tendencia = np.poly1d(coeficientes)
 plt.plot(df.index, tendencia(df.index.year), label='Linha de Tendência', color='red', linestyle='--', linewidth = 1)
@@ -42,7 +45,7 @@ plt.legend()
 # Mostrar as grades no gráfico
 plt.grid(True, color="gray")
 
-# Configurar o limite do eixo x, datas, de 99 a 2022
+# Configurar o limite do eixo x, datas, de 99 a 2022:
 plt.xlim(pd.Timestamp('1999-01-01'), pd.Timestamp('2022-12-31'))
 
 # Adicionar um texto dizendo a fonte dos dados
