@@ -12,16 +12,18 @@ df = pd.read_excel(caminho)
 df['data'] = pd.to_datetime(df['ano'], format='%Y')
 df.set_index('data', inplace=True)
 
-# Calcular a média móvel de 3 anos
+# Calcular a média móvel (de 3 anos) e armazenar isso na coluna media_movel
 df['media_movel'] = df['inflação'].rolling(window=3).mean()
 
-# Plotar a inflação ao longo do tempo
+# criar o gráfico da inflação ao longo do tempo:
+
+#criar uma figura
 plt.figure(figsize=(10, 6))
 
-# Plotar os dados originais de inflação
+# Plotar os dados de inflação
 plt.plot(df.index, df['inflação'], label='Inflação', color='green', linewidth = 3)
 
-# Plotar a média móvel
+# Plotar a média móvel:
 plt.plot(df.index, df['media_movel'], label='Média Móvel (3 anos)', color='blue', linestyle='--', linewidth = 1)
 
 # Adicionar linha de tendência
@@ -48,5 +50,5 @@ plt.xlim(pd.Timestamp('1999-01-01'), pd.Timestamp('2022-12-31'))
 # Adicionar um texto dizendo a fonte dos dados
 plt.text(pd.Timestamp('1997-01-01'), df['inflação'].min() * 0.4, 'Fonte de Dados: IBGE', fontsize=10, color='gray', horizontalalignment='left')
 
-# Mostrar o gráfico
+# Mostrar o gráfico na tela
 plt.show()
