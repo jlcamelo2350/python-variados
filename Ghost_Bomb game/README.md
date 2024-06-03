@@ -12,7 +12,10 @@ Desvie de diversos objetos que caem do céu.
 Sobreviva por um determinado tempo para vencer.
 Música de fundo e sons para aumentar a imersão.
 Download automático de músicas de vitória e derrota.
-### Faça o download do game aqui: https://drive.google.com/drive/folders/1beVyLsV0lY3bE5ay6Yb5wSu4NuCH4ecI?usp=drive_link
+
+### Faça o download do game: 
+#### Acesse: https://drive.google.com/drive/folders/1XIpehnAyJXFFEcXPE8t0uuGh-DwzZOkx?hl=pt-br
+#### Faça o download da pasta Ghost Bomb e execute no computador
 
 #### Requisitos:
 
