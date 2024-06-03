@@ -17,6 +17,7 @@ Download automático de músicas de vitória e derrota.
 #### Acesse: https://drive.google.com/drive/folders/1XIpehnAyJXFFEcXPE8t0uuGh-DwzZOkx?hl=pt-br
 #### Faça o download da pasta Ghost Bomb e execute no computador
 
+Executável criado via biblioteca auto-py-to-exe.
 
 ### Ou execute via código:
 #### Requisitos:
