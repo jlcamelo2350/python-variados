@@ -28,7 +28,8 @@ Download automático de músicas de vitória e derrota.
 
 #### Instale as dependências:
 
-pip install pygame gdown e execute o código na IDE
+Instale o pygame e o gdown via terminal: pip install pygame gdown 
+e execute o código na IDE
 
 ##### Contribuição:
 
