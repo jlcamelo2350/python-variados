@@ -17,6 +17,8 @@ Download automático de músicas de vitória e derrota.
 #### Acesse: https://drive.google.com/drive/folders/1XIpehnAyJXFFEcXPE8t0uuGh-DwzZOkx?hl=pt-br
 #### Faça o download da pasta Ghost Bomb e execute no computador
 
+
+### Ou execute via código:
 #### Requisitos:
 
     Python 3.x
@@ -26,7 +28,7 @@ Download automático de músicas de vitória e derrota.
 
 #### Instale as dependências:
 
-pip install pygame gdown
+pip install pygame gdown e execute o código na IDE
 
 ##### Contribuição:
 
