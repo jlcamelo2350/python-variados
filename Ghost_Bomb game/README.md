@@ -12,6 +12,7 @@ Desvie de diversos objetos que caem do céu.
 Sobreviva por um determinado tempo para vencer.
 Música de fundo e sons para aumentar a imersão.
 Download automático de músicas de vitória e derrota.
+### Faça o download do game aqui: https://drive.google.com/drive/folders/1beVyLsV0lY3bE5ay6Yb5wSu4NuCH4ecI?usp=drive_link
 
 #### Requisitos:
 
