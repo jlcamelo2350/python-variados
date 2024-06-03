@@ -14,14 +14,15 @@ WIDTH, HEIGHT = 800, 600  # Define a largura e altura da janela do jogo
 screen = pygame.display.set_mode((WIDTH, HEIGHT))  # Cria a janela do jogo com o tamanho especificado
 pygame.display.set_caption("Explodam o fantasma")  # Define o título da janela
 
-WHITE = (255, 255, 255)  # Define a cor branca
-BLACK = (0, 0, 0)  # Define a cor preta
+WHITE = (255, 255, 255)  # Define a cor branca (será a cor dos objetos)
+BLACK = (0, 0, 0)  # Define a cor preta(será a cor de fundo)
 
+#Criar os objetos: Bola (que é o Fantasma)
 # Classe da Bola
 class Ball(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        # Cria a imagem da bola (fantasma! uuuhh). Respectivamente, configura-se o fantasma, os olhos (esquerdo, depois direito) e a posição inicial dele
+        # Cria a imagem da bola (fantasma! uuuhh). Respectivamente, configura-se o fantasma, os olhos (esquerdo, depois direito) e a posição inicial dele:
         self.image = pygame.Surface((50, 50), pygame.SRCALPHA)
         pygame.draw.circle(self.image, WHITE, (25, 25), 25)  
         pygame.draw.circle(self.image, BLACK, (15, 15), 5) 
