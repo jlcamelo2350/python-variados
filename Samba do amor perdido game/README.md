@@ -19,7 +19,7 @@ Mais do que um simples jogo de habilidade com Pygame, o Jogo Samba do Amor perdi
     Pygame (instale com pip install pygame)
     Gdown (instale com pip install gdown)
 
-##### Como Jogar:
+#### Como Jogar:
 Clone o repositório.
 Instale as bibliotecas necessárias (pip install -r requirements.txt).
 Execute o jogo (python samba_amor_perdido.py).
@@ -28,7 +28,7 @@ Acerte o alvo verde dentro do tempo limite para progredir.
 Complete 12 acertos para desbloquear a declaração final do Nerd Apaixonado.
 
 
-##### Contribuições:
+#### Contribuições:
 
 Sinta-se à vontade para contribuir com este projeto! Envie suas sugestões, correções de bugs ou novas ideias através de pull requests.
 
