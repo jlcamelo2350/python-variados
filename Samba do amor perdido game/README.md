@@ -9,7 +9,7 @@ Mais do que um simples jogo de habilidade com Pygame, o Jogo Samba do Amor perdi
 ##### Ps.: É um game simples que fiz para treinar mesmo 😁
 
 #### Prepare-se para:
-- Controlar a bola (da paixão) com precisão: Utilize as setas do teclado para guiar a bola vermelha em direção ao alvo verde;
+- Controlar a bola com precisão: Utilize as setas do teclado para guiar a bola vermelha em direção ao alvo verde;
 - Enfrentar o tempo: Cada acerto diminui o tempo disponível, aumentando a dificuldade e testando seus reflexos. Não se preocupe vc vai conseguir; e
 - Conquistar a vitória: Ao completar 12 níveis, você testemunhará a declaração final do Nerd Apaixonado -- e prepare-se para o pagode.
 
